@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.com.starthub.emmanuel.homeautomationwithfirebase.MainActivityThings"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/device1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/device_1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/device1_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/device1"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_toEndOf="@id/device1"
+        android:layout_toRightOf="@id/device1"
+        android:text="@string/off"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/device2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device1"
+        android:layout_marginTop="10dp"
+        android:text="@string/device_2"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/device2_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/device2"
+        android:layout_alignLeft="@id/device1_state"
+        android:layout_alignStart="@id/device1_state"
+        android:layout_toEndOf="@id/device2"
+        android:layout_toRightOf="@id/device2"
+        android:text="@string/off"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/device3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device2"
+        android:layout_marginTop="10dp"
+        android:text="@string/device_3"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/device3_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/device3"
+        android:layout_alignLeft="@id/device1_state"
+        android:layout_alignStart="@id/device1_state"
+        android:layout_toEndOf="@id/device3"
+        android:layout_toRightOf="@id/device3"
+        android:text="@string/off"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/device4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device3"
+        android:text="@string/device_4"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/device4_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/device4"
+        android:layout_alignLeft="@id/device1_state"
+        android:layout_alignStart="@id/device1_state"
+        android:layout_toEndOf="@id/device4"
+        android:layout_toRightOf="@id/device4"
+        android:text="@string/off"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/monitor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device4"
+        android:layout_marginTop="10dp"
+        android:text="@string/no_intruder"
+        android:textStyle="bold" />
+
+</RelativeLayout>

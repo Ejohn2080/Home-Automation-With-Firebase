@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Home Automation</string>
+    <string name="device_1">Device1:</string>
+    <string name="off">OFF</string>
+    <string name="device_2">Device2:</string>
+    <string name="device_3">Device3:</string>
+    <string name="device_4">Device4:</string>
+    <string name="no_intruder">No Intruder</string>
+</resources>
