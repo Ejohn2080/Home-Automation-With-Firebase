@@ -36,7 +36,7 @@ public class MainActivityThings extends Activity {
     private static final String DEVICE2_PIN = "GPIO_33";
     private static final String DEVICE3_PIN = "GPIO_34";
     private static final String DEVICE4_PIN = "GPIO_37";
-    private static final String PIR_MOTION_PIN = "GPIO_35";
+    private static final String PIR_MOTION_PIN = "GPIO_10";
 
 
     private PinSettings Device1;
