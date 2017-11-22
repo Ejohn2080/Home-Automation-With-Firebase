@@ -97,12 +97,26 @@
         tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:id="@+id/monitor1"
+        android:id="@+id/txt_monitor1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/device4"
         android:layout_marginTop="10dp"
-        android:text="@string/no_intruder"
+        android:text="@string/monitor_1"
         android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/monitor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txt_monitor1"
+        android:layout_alignLeft="@id/device1_state"
+        android:layout_alignStart="@id/device1_state"
+        android:layout_toEndOf="@id/txt_monitor1"
+        android:layout_toRightOf="@id/txt_monitor1"
+        android:text="@string/no_intruder"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded" />
 
 </RelativeLayout>

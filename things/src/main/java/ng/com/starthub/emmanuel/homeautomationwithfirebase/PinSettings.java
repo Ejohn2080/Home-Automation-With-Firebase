@@ -1,6 +1,5 @@
 package ng.com.starthub.emmanuel.homeautomationwithfirebase;
 
-import android.content.Context;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -27,6 +26,7 @@ public class PinSettings implements AutoCloseable {
 
     private DatabaseReference Ref;
     private TextView textView;
+    private String monitor;
 
     private Gpio pin;
 
@@ -59,9 +59,10 @@ public class PinSettings implements AutoCloseable {
         }
     }
 
-    public void registerInput(final DatabaseReference Ref, final TextView textView) {
+    public void registerInput(final DatabaseReference Ref, final TextView textView, String monitor) {
         this.Ref = Ref;
         this.textView = textView;
+        this.monitor = monitor;
         try {
             //Detect both when the button goes down and when it goes up.
             pin.setEdgeTriggerType(Gpio.EDGE_BOTH);
@@ -81,6 +82,7 @@ public class PinSettings implements AutoCloseable {
                 //Show the message on textview
                 if (value) {
                     textView.setText(INTRUDER);
+                    NotificationManager.getInstance().sendNotificaton("Intruder alert on " + monitor);
                 } else {
                     textView.setText(NO_INTRUDER);
                 }

@@ -89,15 +89,13 @@ public class MainActivityThings extends Activity {
             device3_Ref.addValueEventListener(new DeviceStatusEventListener(Device3, textView3));
             device4_Ref.addValueEventListener(new DeviceStatusEventListener(Device4, textView4));
 
-            Monitor1.registerInput(monitor_Ref, textView5);
+            Monitor1.registerInput(monitor_Ref, textView5, "[Monitor 1]");
 
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
 
