@@ -28,16 +28,17 @@ public class MainActivityMobile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_mobile);
 
-        Switch device_1_switch = (Switch) findViewById(R.id.device1_switch);
-        Switch device_2_switch = (Switch) findViewById(R.id.device2_switch);
-        Switch device_3_switch = (Switch) findViewById(R.id.device3_switch);
-        Switch device_4_switch = (Switch) findViewById(R.id.device4_switch);
-        TextView monitor_1_textView = (TextView) findViewById(R.id.textView7);
+        Switch device_1_switch = findViewById(R.id.device1_switch);
+        Switch device_2_switch = findViewById(R.id.device2_switch);
+        Switch device_3_switch = findViewById(R.id.device3_switch);
+        Switch device_4_switch = findViewById(R.id.device4_switch);
+        TextView monitor_1_textView = findViewById(R.id.textView7);
 
-        allOnButton = (Button) findViewById(R.id.all_on_btn);
-        allOffButton = (Button) findViewById(R.id.all_off_btn);
+        allOnButton = findViewById(R.id.all_on_btn);
+        allOffButton = findViewById(R.id.all_off_btn);
 
 
+        //Reference the database table and column
 
         final FirebaseDatabase fbDatabase = FirebaseDatabase.getInstance();
 
