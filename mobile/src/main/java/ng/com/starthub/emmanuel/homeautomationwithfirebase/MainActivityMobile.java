@@ -65,6 +65,7 @@ public class MainActivityMobile extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 device1_Ref.setValue(isChecked);
+                Log.d(TAG, "set data on database... device 1: " + device1_Ref.getKey());
             }
         });
 
@@ -72,18 +73,21 @@ public class MainActivityMobile extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 device2_Ref.setValue(isChecked);
+                Log.d(TAG, "set data on database... device 2: " + device2_Ref.getKey());
             }
         });
         device_3_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 device3_Ref.setValue(isChecked);
+                Log.d(TAG, "set data on database... device 3: " + device3_Ref.getKey());
             }
         });
         device_4_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 device4_Ref.setValue(isChecked);
+                Log.d(TAG, "set data on database... device 4: " + device4_Ref.getKey());
             }
         });
 

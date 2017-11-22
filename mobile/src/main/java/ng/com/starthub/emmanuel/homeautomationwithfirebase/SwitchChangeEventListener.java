@@ -1,5 +1,6 @@
 package ng.com.starthub.emmanuel.homeautomationwithfirebase;
 
+import android.util.Log;
 import android.widget.Switch;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,8 +25,9 @@ public class SwitchChangeEventListener implements ValueEventListener {
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
         Boolean status = (Boolean) dataSnapshot.getValue();
-
+        Log.d(TAG, "DATABASE Reference status: " + status);
         aSwitch.setChecked(status == null ? false : status);
+
     }
 
     @Override
