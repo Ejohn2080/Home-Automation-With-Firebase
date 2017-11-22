@@ -8,12 +8,17 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivityMobile extends Activity {
 
@@ -99,6 +104,18 @@ public class MainActivityMobile extends Activity {
             @Override
             public void onClick(View v) {
                 turnAllOnOff(dbRef, true);
+            }
+        });
+
+        Button btn = findViewById(R.id.send_alert);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseMessaging.getInstance().subscribeToTopic("alarm");
+                String tkn = FirebaseInstanceId.getInstance().getToken();
+                Toast.makeText(MainActivityMobile.this, "Successfully subscribe!", LENGTH_SHORT).show();
+                Log.d("App", "Token [" + tkn + "]");
             }
         });
 
