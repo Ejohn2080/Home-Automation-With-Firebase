@@ -3,7 +3,6 @@ package ng.com.starthub.emmanuel.homeautomationwithfirebase;
 import android.os.AsyncTask;
 import android.util.Log;
 
-
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,6 +12,8 @@ import java.net.URL;
  */
 
 class NotificationManager {
+
+    private static final String TAG = NotificationManager.class.getSimpleName();
 
     private static NotificationManager me = null;
 
@@ -36,7 +37,7 @@ class NotificationManager {
         protected Void doInBackground(String... strings) {
             String msg = strings[0];
             String key = strings[1];
-            Log.d("Alert", "Send data");
+            Log.d(TAG, "Send data");
             try {
                 HttpURLConnection con = (HttpURLConnection) (new URL("http://fcm.googleapis.com/fcm/send")).openConnection();
                 con.setRequestMethod("POST");
@@ -52,12 +53,12 @@ class NotificationManager {
                         "  \"message\": \"" + msg + "\"" +
                         "  }\n" +
                         "}";
-                Log.d("Alm", "Body ["+body+"]");
+                Log.d(TAG, "Body [" + body + "]");
                 con.getOutputStream().write(body.getBytes());
                 InputStream is = con.getInputStream();
                 byte[] buffer = new byte[1024];
                 while ( is.read(buffer) != -1)
-                    Log.d("Alert", new String(buffer));
+                    Log.d(TAG, new String(buffer));
                 con.disconnect();
 
             }

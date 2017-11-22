@@ -4,16 +4,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
-import java.util.Random;
 
 /**
  * Created by Emmanuel on 21/11/2017.
@@ -24,7 +19,7 @@ public class NotificationService extends FirebaseMessagingService{
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d("Msg", "Message received ["+remoteMessage+"]");
+        Log.d(TAG, "Message received [" + remoteMessage + "]");
 
         // Create Notification
         Intent intent = new Intent(this, MainActivityMobile.class);
