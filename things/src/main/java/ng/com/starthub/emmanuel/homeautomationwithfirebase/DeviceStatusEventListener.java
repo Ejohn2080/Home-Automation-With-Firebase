@@ -28,7 +28,7 @@ public class DeviceStatusEventListener implements ValueEventListener {
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
         Boolean value = (Boolean) dataSnapshot.getValue();
-        Log.d(TAG, "Pin Value: " + value);
+        Log.d(TAG, "Database Value: " + value);
         pin.turnOnOff(value == null ? false : value, textView);
     }
 

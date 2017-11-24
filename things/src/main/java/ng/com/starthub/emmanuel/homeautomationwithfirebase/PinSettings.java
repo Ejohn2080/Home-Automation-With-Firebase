@@ -29,22 +29,26 @@ public class PinSettings implements AutoCloseable {
     private String monitor;
 
     private Gpio pin;
-
-    //Set the pin direction input or output
-    public enum setState {
-        ON(Gpio.DIRECTION_OUT_INITIALLY_HIGH), OFF(Gpio.DIRECTION_OUT_INITIALLY_LOW), IN(Gpio.DIRECTION_IN);
-
-        final int state;
-
-        setState(int state) {
-            this.state = state;
+    private GpioCallback monitorCallback = new GpioCallback() {
+        @Override
+        public boolean onGpioEdge(Gpio gpio) {
+            try {
+                Ref.setValue(gpio.getValue());
+                boolean value = getState();
+                //Show the message on textview
+                if (value) {
+                    textView.setText(INTRUDER);
+                    NotificationManager.getInstance().sendNotificaton("Intruder alert on " + monitor);
+                } else {
+                    textView.setText(NO_INTRUDER);
+                }
+                Log.d(TAG, "GPIO Callback... reading pin value: " + value);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return true;
         }
-
-        public int getState() {
-            return this.state;
-        }
-
-    }
+    };
 
 
     public PinSettings(String pinName, setState set) {
@@ -73,27 +77,6 @@ public class PinSettings implements AutoCloseable {
         }
     }
 
-    private GpioCallback monitorCallback = new GpioCallback() {
-        @Override
-        public boolean onGpioEdge(Gpio gpio) {
-            try {
-                Ref.setValue(gpio.getValue());
-                boolean value = getState();
-                //Show the message on textview
-                if (value) {
-                    textView.setText(INTRUDER);
-                    NotificationManager.getInstance().sendNotificaton("Intruder alert on " + monitor);
-                } else {
-                    textView.setText(NO_INTRUDER);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return true;
-        }
-    };
-
-
     public boolean getState() {
         boolean value = false;
         try {
@@ -104,7 +87,6 @@ public class PinSettings implements AutoCloseable {
 
         return value;
     }
-
 
     public void turnOnOff(boolean turn, TextView textView) {
         try {
@@ -119,7 +101,6 @@ public class PinSettings implements AutoCloseable {
             Log.d(TAG, "Error in setting pin value" + e.getMessage(), e);
         }
     }
-
 
     @Override
     public void close() throws Exception {
@@ -147,6 +128,22 @@ public class PinSettings implements AutoCloseable {
                 pin = null;
             }
         }
+    }
+
+    //Set the pin direction input or output
+    public enum setState {
+        ON(Gpio.DIRECTION_OUT_INITIALLY_HIGH), OFF(Gpio.DIRECTION_OUT_INITIALLY_LOW), IN(Gpio.DIRECTION_IN);
+
+        final int state;
+
+        setState(int state) {
+            this.state = state;
+        }
+
+        public int getState() {
+            return this.state;
+        }
+
     }
 
 }
