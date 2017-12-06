@@ -28,7 +28,7 @@ class NotificationManager {
 
     void sendNotificaton(String message) {
 
-        (new FirebaseNotificationTask()).execute(message, "AAAAW2fFEwA:APA91bHeraXA8C85WAqn1uML1IzQdbwTkIiGeOo_r06VPhyrAD9b0ShEXopVuO9MU8Sw5Irvh4p114HN5dKBRdrwIe2crG_TlCZaygvriSulRvahMop3SSEVkK7KHqQHlcVZkyW_mTRA");
+        (new FirebaseNotificationTask()).execute(message, "Your token here");
     }
 
     private class FirebaseNotificationTask extends AsyncTask<String, Void, Void> {
