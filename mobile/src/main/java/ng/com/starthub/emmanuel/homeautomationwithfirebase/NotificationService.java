@@ -36,6 +36,7 @@ public class NotificationService extends FirebaseMessagingService{
         if (remoteMessage.getNotification() != null) {
             info = remoteMessage.getNotification().getBody();
         }
+        
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_launcher_background)
