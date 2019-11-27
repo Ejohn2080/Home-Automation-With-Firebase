@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HomeAutomationWithFirebase.iml" filepath="$PROJECT_DIR$/HomeAutomationWithFirebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Home-Automation-With-Firebase.iml" filepath="$PROJECT_DIR$/Home-Automation-With-Firebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile/Home-Automation-With-Firebase-mobile.iml" filepath="$PROJECT_DIR$/mobile/Home-Automation-With-Firebase-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/things/Home-Automation-With-Firebase-things.iml" filepath="$PROJECT_DIR$/things/Home-Automation-With-Firebase-things.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/things/things.iml" filepath="$PROJECT_DIR$/things/things.iml" />
     </modules>

@@ -6,8 +6,13 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.things.pio.Gpio;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Skeleton of an Android Things activity.
@@ -32,11 +37,11 @@ public class MainActivityThings extends Activity {
 
     private static final String TAG = MainActivityThings.class.getSimpleName();
 
-    private static final String DEVICE1_PIN = "GPIO_32";
-    private static final String DEVICE2_PIN = "GPIO_33";
-    private static final String DEVICE3_PIN = "GPIO_34";
-    private static final String DEVICE4_PIN = "GPIO_37";
-    private static final String PIR_MOTION_PIN = "GPIO_10";
+    private static final String DEVICE1_PIN = "GPIO6_IO14";
+    private static final String DEVICE2_PIN = "GPIO2_IO05";
+    private static final String DEVICE3_PIN = "GPIO2_IO00";
+    private static final String DEVICE4_PIN = "GPIO2_IO02";
+    private static final String PIR_MOTION_PIN = "GPIO2_IO01";
 
 
     private PinSettings Device1;
@@ -51,6 +56,8 @@ public class MainActivityThings extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_things);
         Log.d(TAG, "Oncreate... ");
+
+
         try {
             Log.d(TAG, "set output pin... ");
             Device1 = new PinSettings(DEVICE1_PIN , PinSettings.setState.OFF);

@@ -5,13 +5,13 @@ import android.widget.TextView;
 
 import com.google.android.things.pio.Gpio;
 import com.google.android.things.pio.GpioCallback;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.firebase.database.DatabaseReference;
 
 import java.io.IOException;
 
 /**
- * Created by Emmanuel on 05/11/2017.
+ * modified by Emmanuel on 27/11/2019.
  */
 
 public class PinSettings implements AutoCloseable {
@@ -52,10 +52,11 @@ public class PinSettings implements AutoCloseable {
 
 
     public PinSettings(String pinName, setState set) {
-        PeripheralManagerService service = new PeripheralManagerService();
+
+        PeripheralManager manager = PeripheralManager.getInstance();
 
         try {
-            Gpio pin = service.openGpio(pinName);
+            Gpio pin = manager.openGpio(pinName);
             this.pin = pin;
             this.pin.setDirection(set.state);
         } catch (IOException e) {

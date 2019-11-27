@@ -3,6 +3,7 @@
     package="ng.com.starthub.emmanuel.homeautomationwithfirebase">
 
 
+    <uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO" />
     <application>
         <uses-library android:name="com.google.android.things" />
 

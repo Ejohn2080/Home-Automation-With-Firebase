@@ -8,7 +8,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 /**
- * Created by Emmanuel on 05/11/2017.
+ * modified by Emmanuel on 27/11/2019.
  */
 
 public class DeviceStatusEventListener implements ValueEventListener {
