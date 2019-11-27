@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "264071931087",
+    "firebase_url": "https://myhome-2080.firebaseio.com",
+    "project_id": "myhome-2080",
+    "storage_bucket": "myhome-2080.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264071931087:android:7de66a3c7469ce367583ba",
+        "android_client_info": {
+          "package_name": "ng.com.starthub.emmanuel.homeautomationwithfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264071931087-uckbdbdmehk3o6sb8203p03i0ufmme7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGjkw-zomzClG3qu8V3rPMHOYOjDNP0PQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264071931087-uckbdbdmehk3o6sb8203p03i0ufmme7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
